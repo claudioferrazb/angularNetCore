@@ -1,0 +1,22 @@
+<div class="container">
+  <h5 class="py-3">Atendimentos</h5>
+  <p *ngIf="!atendimentos">Nenhum atendimento encontrado.</p>
+  <table class="table" *ngIf="atendimentos">
+    <thead>
+      <tr>
+        <th>COD</th>
+        <th>Data</th>
+        <th>Valor</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let atendimento of atendimentos">
+        <td>{{atendimento.id}}</td>
+        <td>{{atendimento.data}}</td>
+        <td>{{atendimento.valor}}</td>
+        <td>{{atendimento.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

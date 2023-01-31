@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, take } from 'rxjs';
 import { Paciente } from '../models/paciente';
 
 @Injectable({
@@ -31,5 +31,4 @@ export class PacientesService {
   deletePaciente(id: number): Observable<Paciente> {
     return this.http.delete<Paciente>(this.baseURL +'/api/pacientes/' + id)
   }
-
 }

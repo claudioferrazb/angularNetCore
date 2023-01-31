@@ -25,7 +25,10 @@
                 <label>Telefone</label>
                 <input name="telefone" type="text" class="form-control" placeholder="(000) 90000-0000" [(ngModel)]="pacienteDetalhe.telefone">
                 <label>Sexo</label>
-                <input name="sexo" type="text" class="form-control" placeholder="M-F" [(ngModel)]="pacienteDetalhe.sexo">
+                <select name="sexo" class="form-select"  [(ngModel)]="pacienteDetalhe.sexo">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
               </div>
             </div>
           </div>

@@ -1,5 +1,14 @@
 <div class="container">
-  <h5 class="py-3">Pacientes</h5><a href="pacientes/add" class="btn btn-primary">+ Novo</a>
+  <h5 class="py-3">Pacientes</h5>
+  <div class="input-group mb-2">
+    <div class="input-group-prepend me-2">
+      <a href="pacientes/add" class="btn btn-primary">+ Novo</a>
+    </div>
+    <div class="input-group-prepend">
+      <div class="input-group-text">Filtro: </div>
+    </div>
+    <input type="text" class="form-control" placeholder="Filtrar por paciente" [(ngModel)]="filtroLista">
+  </div>
   <p *ngIf="!pacientes">Nenhum atendimento encontrado.</p>
   <table class="table" *ngIf="pacientes">
     <thead>
@@ -13,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let paciente of pacientes">
+      <tr *ngFor="let paciente of pacientesFiltrados">
         <td>{{paciente.id}}</td>
         <td>{{paciente.cpf}}</td>
         <td>{{paciente.nome}}</td>
